@@ -12,19 +12,27 @@ Feel free to use it. https://pwall.org/
 #### Features
 * Simple, efficient, secure
 * Client-side, works offline
-* Updated constantly
+* Constant updates
 * Transparent, easy to audit
-* Ink friendly
-* Integrity of files validated using SHA-256 hashes; meaning files have not been tampered with (see below)
-* More than 500 cryptocurrencies supported
+* Ink-friendly
+* Integrity of files validated; meaning files have not been tampered with (see below)
+* More than 510 cryptocurrencies supported
 * Major cryptocurrencies easily accessible using **pwall.org/[coin]**:
 	* https://pwall.org/bitcoin
-	* https://pwall.org/bitcoincash
 	* https://pwall.org/ethereum
+	* https://pwall.org/ripple
 	* https://pwall.org/litecoin
 	* https://pwall.org/stellar
-	* https://pwall.org/ripple
-	* ...
+	* https://pwall.org/qtum
+	* https://pwall.org/zcash
+	* https://pwall.org/dogecoin
+	* https://pwall.org/bitcoingold
+	* https://pwall.org/bitcoincash
+	* https://pwall.org/dash
+	* https://pwall.org/reddcoin
+	* https://pwall.org/monacoin
+	* https://pwall.org/digibyte
+	* https://pwall.org/ for others
 		
 #### Instructions
 * Use this generator offline for maximum security.
