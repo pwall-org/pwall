@@ -1,5 +1,5 @@
 ### pwall.org - a lightweight, open-source, universal paper wallet generator
-# ![](wallet.png)
+# ![](img/wallet.png)
 #### Description
 Using third-party services to generate paper wallets should be avoided without proper code auditing by independent entities.  
 Unnecessary codes and poorly written libraries are often used, creating a huge security risk for users.  
