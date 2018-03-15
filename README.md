@@ -14,15 +14,16 @@ Feel free to use it. https://pwall.org/
 * Client-side, works offline
 * Updated constantly
 * Transparent, easy to audit
+* Ink friendly
 * Integrity of files validated using SHA-256 hashes; meaning files have not been tampered with (see below)
 * More than 500 cryptocurrencies supported
-* Almost every major cryptocurrency easily accessible using subdomains **[coin].pwall.org**:
-	* https://bitcoin.pwall.org
-	* https://bitcoincash.pwall.org
-	* https://ethereum.pwall.org
-	* https://litecoin.pwall.org
-	* https://stellar.pwall.org
-	* https://ripple.pwall.org
+* Major cryptocurrencies easily accessible using **pwall.org/[coin]**:
+	* https://pwall.org/bitcoin
+	* https://pwall.org/bitcoincash
+	* https://pwall.org/ethereum
+	* https://pwall.org/litecoin
+	* https://pwall.org/stellar
+	* https://pwall.org/ripple
 	* ...
 		
 #### Instructions
