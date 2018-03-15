@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ripple Paper Wallet Generator</title>
+<meta name="description" content="A lightweight, client-side, reliable, fast, open-source universal paper wallet generator supporting almost every major cryptocurrency">
+<meta name="keywords" content="minimal, reliable, fast, universal, paper, wallet, generator, offline, pwall, ripple, xrp, cryptocurrency">
+<link rel="shortcut icon" href="favicon.ico">
+<!-- The MIT License (MIT)
+
+Copyright (c) 2018 pwall.org
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE. -->
+<style>
+body{background-color: #f6f5f2;font-family: Arial, Helvetica, sans-serif;font-size: 14px;}
+#container{margin: auto;max-width: 500px;}#titleLabel{font-weight:normal;}
+.button{padding:5px 10px;text-align:center;text-decoration:none;display:inline-block;margin:4px 0;cursor:pointer;}
+.button1{margin-left:2px;background-color:#f6f5f2;color:black;border:1px solid #7a7a7a;}
+.button2{background-color:#4f6fff;color:#f6f5f2;border:1px solid #7a7a7a;}
+.button:hover{background-color:#385cff;color:#f6f5f2;}
+table{background-color: white;border-collapse: collapse;margin:10px 0;}
+td,th{border: 2px solid #dedede;text-align: left;padding: 5px;}
+#titlePaper{text-align: right;background-color:#dedede}a{color:black;}#secret,#public{font-size:16px;font-family: monospace;}#secret_qr,#public_qr{height:130px;}#secret,#secretLabel,#secret_qr{float:right;}
+.grayHeaders{background-color: #f6f5f2;}#shareColor{color:green;}#secretColor{color:red;}#update{display:inline-block;}#footer{font-size: 12px;}
+@media only screen and (max-width: 640px){#secret, #public{font-size:14px;}}@media print{.noprint {display:none;}}
+</style>
+</head>
+<body onload="generate()">
+<div id="container">
+<h3>pwall.org <span id="titleLabel">- a lightweight, open-source, universal paper wallet generator</span></h3>
+<div class="noprint"><button class="button button2" onclick="generate()">Generate</button>
+<button class="button button1" onclick="window.print()">Print</button>
+<a href="../index.html"><input type="button" class="button button1" value="Home"/></a></div>
+<table>
+<tr><th id="titlePaper">Ripple Paper Wallet</th></tr>
+<tr><th class="grayHeaders">Public Address <span id="shareColor">(SHARE)</span></th></tr>
+<tr><td><div id="public">Generating...</div></td></tr>
+<tr><td><div id="public_qr"></div></td></tr>
+<tr><th class="grayHeaders"><div id="secretLabel">Private Key <span id="secretColor">(SECRET)</span></div></th></tr>
+<tr><td><div id="secret">Generating...</div></td></tr>
+<tr><td><div id="secret_qr"></div></td></tr>
+<tr><th class="grayHeaders">Instructions</th>
+<tr><td><small>
+<b>0. (Optional but highly recommended) Use pwall offline for maximum security</b> by downloading and extracting the zip file below and double-clicking on index.html on a secure offline computer or a Linux LiveCD.
+<br><b>1. Generate a new wallet</b> by clicking on the "Generate" button.
+<br><b>2. Print your new wallet</b> by clicking on the "Print" button. Keep your paper wallet in a secure location.
+<br><b>3. Public Address</b> is used to receive or deposit funds to this paper wallet. You can share the address with others.
+<br><b>4. Private key</b> is used to spend funds stored in this wallet. Do not share the private key!
+<br><b>5. Deposit at least 20 XRP</b> to activate your wallet.</small></td></tr>
+</table>
+<div id="footer" class="noprint"><b>Donations</b><br><b>XRP</b>: <a>rsb8ud6oDkNWjNG1SdSDs4bVd1goUGR4D8</a>
+<br><br>See <a href="https://github.com/pwall-org/ripple" target=_blank>Github repository</a> for more info. <a href="https://github.com/pwall-org/ripple/releases" target=_blank>(Download zip).</a>
+<br>Using official RippleAPI to generate keys.
+<div id="update"></div>
+<br>Copyright &copy; 2018 pwall.org. Copyright and licensing notices included in the source code.</div></div>
+<script src="../js/lodash.js"></script>
+<!-- The MIT License
+
+Copyright JS Foundation and other contributors <https://js.foundation/>
+
+Based on Underscore.js, copyright Jeremy Ashkenas,
+DocumentCloud and Investigative Reporters & Editors <http://underscorejs.org/>
+
+This software consists of voluntary contributions made by many
+individuals. For exact contribution history, see the revision history
+available at https://github.com/lodash/lodash
+
+The following license applies to all parts of this software except as
+documented below:
+
+====
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.-->
+
+<script src="../js/ripple-0.19.0.js"></script>
+<!-- ISC License
+
+Copyright (c) 2012-2015 Ripple Labs Inc.
+
+Permission to use, copy, modify, and distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.-->
+
+<script src="../js/qrcode.js"></script>
+<!-- The MIT License (MIT)
+
+Copyright (c) 2012 davidshimjs
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE. -->
+<script>
+function generate() {
+var api = new ripple.RippleAPI();
+var account = api.generateAddress();
+document.getElementById("public").textContent = account.address;
+document.getElementById("secret").textContent = account.secret;
+document.getElementById("public_qr").textContent = "";
+document.getElementById("secret_qr").textContent = "";
+new QRCode(document.getElementById("public_qr"), {text: account.address, width: 128, height: 128, correctLevel : QRCode.CorrectLevel.H});
+new QRCode(document.getElementById("secret_qr"), {text: account.secret, width: 128, height: 128, correctLevel : QRCode.CorrectLevel.H});}
+document.getElementById("update").textContent = "Latest update: " + document.lastModified;
+</script>
+</body>
+</html>
