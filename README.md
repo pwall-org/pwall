@@ -52,12 +52,12 @@ Feel free to use it. https://pwall.org/
 	* [SHA-256] 0f98a457e504ffa94a0cd01488cb4dd94327a5fc655950de5a1e0b739faba252
 * [web3-eth-accounts.js](https://github.com/ethereum/web3.js) (Official Ethereum API)
 	* [SHA-256] 486fcaf21777aded0550ff96001f146855430904d7da2e3858a07835edd53212
-* [ripple-0.19.js](https://github.com/ripple/ripple-lib/releases) (Official Ripple API)
-	* [SHA-256] 6715db1af638f99226ab7f8f244103306aa6e04d1b8c1da47a63431053bacb84
+* [ripple-0.22.js](https://github.com/ripple/ripple-lib/releases) (Official Ripple API)
+	* [SHA-256] AB98026FABE296BD938297C48CB58E01DFDBE90F3C66C9617D6A3E1EFD4C6B93
 * [lodash.js](https://github.com/lodash/lodash) (Ripple API dependency)
 	* [SHA-256] 11e0a812af465183a588e62dc73b14bcb06fd33797740616e3b1a07922e9bc6a
 * [stellar-base.js](https://github.com/stellar/bower-js-stellar-base) v0.7.7 (Official Stellar API)
-	* [SHA-256] 428a315a31168aab42a54e696c12950b1aaf7b07dcd47a4f9871ddb67b7f9255
+	* [SHA-256] AD6BE647329F8159B6BB2F7F6E7CC8DE9B39B092951858EBB3F8ED5A1C66C8F4
 * [bitcore-lib-zcash.js](https://github.com/bitmex/zcash-bitcore-lib)
 	* [SHA-256] 621ad3c644508da28ac671c432a78de1d3b0f51a24edbd065bdb2c0e8f2f154c
 * [qrcode.js](https://github.com/davidshimjs/qrcodejs) 
