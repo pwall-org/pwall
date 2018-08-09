@@ -56,7 +56,7 @@ Feel free to use it. https://pwall.org/
 	* [SHA-256] AB98026FABE296BD938297C48CB58E01DFDBE90F3C66C9617D6A3E1EFD4C6B93
 * [lodash.js](https://github.com/lodash/lodash) (Ripple API dependency)
 	* [SHA-256] 11e0a812af465183a588e62dc73b14bcb06fd33797740616e3b1a07922e9bc6a
-* [stellar-base.js](https://github.com/stellar/bower-js-stellar-base) v0.7.7 (Official Stellar API)
+* [stellar-base.js](https://github.com/stellar/bower-js-stellar-base) v0.8.2 (Official Stellar API)
 	* [SHA-256] AD6BE647329F8159B6BB2F7F6E7CC8DE9B39B092951858EBB3F8ED5A1C66C8F4
 * [bitcore-lib-zcash.js](https://github.com/bitmex/zcash-bitcore-lib)
 	* [SHA-256] 621ad3c644508da28ac671c432a78de1d3b0f51a24edbd065bdb2c0e8f2f154c
