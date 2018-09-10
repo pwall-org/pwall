@@ -32,6 +32,7 @@ Feel free to use it. https://pwall.org/
 	* https://pwall.org/reddcoin
 	* https://pwall.org/monacoin
 	* https://pwall.org/digibyte
+	* https://pwall.org/vechain
 	* https://pwall.org/ for others
 		
 #### Instructions
