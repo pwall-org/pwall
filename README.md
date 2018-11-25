@@ -42,8 +42,7 @@ Feel free to use it. https://pwall.org/
 * Private key is used to spend funds. Do not share it!
 
 #### Tips appreciated!  
-**BTC**: 137H4GbcDz3e3DS9ADDbee4wa1GHHdcEnW  
-**ETH**: 0x0bDcBCbB9B0aCA3EAEE7a94A4fb5FB0f16681e2f  
+**BTC**: 19Y2H15smm4iz5xMMMYnXzjLZi8FJA8JzS  
 :punch:
 #
 #### Integrity validation
