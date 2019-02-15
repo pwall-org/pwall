@@ -1,4 +1,4 @@
-### pwall.org - a lightweight, open-source, universal paper wallet generator
+### pwall - a lightweight, open-source, universal paper wallet generator
 # ![](img/wallet.png)
 #### Description
 Using third-party services to generate paper wallets should be avoided without proper code auditing by independent entities.  
@@ -7,33 +7,15 @@ Some services advertise that their generator works offline, and thus its users a
 However, there is still a possibility that an offline paper wallet generator creates keys deterministically without ever needing to communicate this information in any way.  
 For this reason, I wouldn't trust any random websites offering offline paper wallet generators without proper investigation.  
 pwall, on the other hand, contains no bloat but only the essentials.
-Feel free to use it. https://pwall.org/ 
+Feel free to use it. https://pwall-org.github.io/pwall/
 
 #### Features
 * Simple, efficient, secure
 * Client-side, works offline
-* Constant updates
 * Transparent, easy to audit
 * Ink-friendly
 * Integrity of files validated; meaning files have not been tampered with (see below)
-* More than 510 cryptocurrencies supported
-* Major cryptocurrencies easily accessible using **pwall.org/[coin]**:
-	* https://pwall.org/bitcoin
-	* https://pwall.org/ethereum
-	* https://pwall.org/ripple
-	* https://pwall.org/litecoin
-	* https://pwall.org/stellar
-	* https://pwall.org/qtum
-	* https://pwall.org/zcash
-	* https://pwall.org/dogecoin
-	* https://pwall.org/bitcoingold
-	* https://pwall.org/bitcoincash
-	* https://pwall.org/dash
-	* https://pwall.org/reddcoin
-	* https://pwall.org/monacoin
-	* https://pwall.org/digibyte
-	* https://pwall.org/vechain
-	* https://pwall.org/ for others
+* More than 500 supported cryptocurrencies
 		
 #### Instructions
 * Use this generator offline for maximum security.
