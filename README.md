@@ -4,7 +4,7 @@
 Using third-party services to generate paper wallets should be avoided without proper code auditing by independent entities.  
 Unnecessary codes and poorly written libraries are often used, creating a huge security risk for users.  
 Some services advertise that their generator works offline, and thus its users are immune to private key theft.
-However, there is still a possibility that an offline paper wallet generator creates keys deterministically without ever needing to communicate this information in any way.  (see: https://medium.com/mycrypto/disclosure-key-generation-vulnerability-found-on-walletgenerator-net-potentially-malicious-3d8936485961)
+However, there is still a possibility that an offline paper wallet generator creates keys deterministically without ever needing to communicate this information in any way.  (see: https://medium.com/mycrypto/disclosure-key-generation-vulnerability-found-on-walletgenerator-net-potentially-malicious-3d8936485961)  
 For this reason, I wouldn't trust any random websites offering offline paper wallet generators without proper investigation.  
 pwall, on the other hand, contains no bloat but only the essentials.
 Feel free to use it. https://pwall-org.github.io/pwall/
