@@ -4,18 +4,15 @@ import { coinList } from "./coinList";
 function App() {
   return (
     <div className="App">
-      <div id="title">pwall.org</div>
-      <div id="titleLabel">
+      <h1 id="title">pwall.org</h1>
+      <h2 id="titleLabel">
         a lightweight, open-source, universal paper wallet generator
-      </div>
-      <input
-        type="text"
-        placeholder="Search for your cryptocurrency..."
-      ></input>
+      </h2>
+      <input type="text" placeholder="Search for your cryptocurrency..." />
       <ol>
-        {coinList.map((coin) => {
-          <li>{coin}</li>;
-        })}
+        {coinList.map((coin, index) => (
+          <li key={index}>{coin}</li>
+        ))}
       </ol>
     </div>
   );
