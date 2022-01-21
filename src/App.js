@@ -1,22 +1,22 @@
 import "./App.css";
+import { coinList } from "./coinList";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div id="title">pwall.org</div>
+      <div id="titleLabel">
+        a lightweight, open-source, universal paper wallet generator
+      </div>
+      <input
+        type="text"
+        placeholder="Search for your cryptocurrency..."
+      ></input>
+      <ol>
+        {coinList.map((coin) => {
+          <li>{coin}</li>;
+        })}
+      </ol>
     </div>
   );
 }
