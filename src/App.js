@@ -1,6 +1,5 @@
 import "./App.css";
 import { coinList } from "./coinList";
-import SearchBar from "./SearchBar";
 import { useState } from "react";
 
 function App() {
@@ -20,7 +19,11 @@ function App() {
       <h2 id="titleLabel">
         a lightweight, open-source, universal paper wallet generator
       </h2>
-      <SearchBar handleSearch={handleSearch} />
+      <input
+        type="text"
+        placeholder="Search for your cryptocurrency..."
+        onChange={handleSearch}
+      />
       <ol>
         {filteredCoins.map((coin, index) => (
           <li key={index}>{coin}</li>
